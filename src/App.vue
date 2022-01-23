@@ -7,6 +7,7 @@
       </q-tabs>
     </q-header>
 
+    //Hacer vuemobile detect aqui
     <q-page-container>
       <router-view />
     </q-page-container>

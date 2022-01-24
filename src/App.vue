@@ -8,9 +8,9 @@
       <!-- hacer vuemobile detect aqui -->
 
       <q-tabs align="left">
-        <q-route-tab to="/" label="Home" />
-        <q-route-tab to="/about" label="About" />
-        <q-route-tab to="/contact" label="Contact Us" />
+        <q-route-tab to="/" label="Inicio" />
+        <q-route-tab to="/sobre" label="Sobre Nosotros" />
+        <q-route-tab to="/contacto" label="Contactenos" />
       </q-tabs>
     </q-header>
 

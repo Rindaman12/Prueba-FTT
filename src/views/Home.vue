@@ -2,8 +2,8 @@
   <div class="bg-image">
     <div class="main">
       <div class="headers">
-        <h2 class="text-white" style="font-weight: bold">FAST TRACK TALENT</h2>
-        <h3 class="text-green">Llevandote Mas Cerca Al Talento De Verdad</h3>
+        <h2 class="text-primary" style="font-weight: bold">FAST TRACK TALENT</h2>
+        <h3 class="text-white">Llevandote Mas Cerca Al Talento De Verdad</h3>
         <h5>
           FAST TRACK TALENT, la compañia por defecto para buscar empleo y
           contratar talento de trabajo remoto a nivel nacional e internacional,
@@ -15,14 +15,14 @@
           <q-btn class="buttons" color="primary" size="24px">
             <router-link to="/about">
               <i class="far fa-address-card" style="padding-right: 10px"></i>
-              About Us
+              Sobre Nosotros
             </router-link>
           </q-btn>
 
           <q-btn class="buttons" color="secondary" size="24px">
             <router-link to="/Contact">
               <i class="far fa-envelope" style="padding-right: 10px"></i>
-              Contact Us
+              Contactenos
             </router-link>
           </q-btn>
         </div>

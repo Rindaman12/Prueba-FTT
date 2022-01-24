@@ -1,24 +1,27 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-dark text-white">
-          <q-avatar>
-            <img src="/img/ftt_logo.png">
-          </q-avatar>
+      <q-avatar>
+        <img alt="FTT Logo" src="/img/ftt_logo.png" />
+      </q-avatar>
+      Fast Track Talent
+      <!-- hacer vuemobile detect aqui -->
+
       <q-tabs align="left">
         <q-route-tab to="/" label="Home" />
         <q-route-tab to="/about" label="About" />
+        <q-route-tab to="/contact" label="Contact Us" />
       </q-tabs>
     </q-header>
 
-    //Hacer vuemobile detect aqui
     <q-page-container>
       <router-view />
     </q-page-container>
+    <!-- Y terminalo aqui -->
   </q-layout>
 </template>
 
 <style>
-
 #app {
   font-family: Avant Garde Gothic;
   -webkit-font-smoothing: antialiased;

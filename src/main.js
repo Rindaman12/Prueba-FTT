@@ -14,9 +14,7 @@ createApp(App)
           primary: "#94f899",
           secondary: "#82debe",
           accent: "#bfbfbf",
-
           dark: "#23272f",
-
           positive: "#21BA45",
           negative: "#C10015",
           info: "#31CCEC",

@@ -1,7 +1,7 @@
 <template>
   <div class="bg-image">
     <div class="main">
-      <div class="box">
+      <div class="form">
         <h3 class="text-primary" style="font-weight: bold">Sobre Nosotros</h3>
         <h5>
           FAST TRACK TALENT, la compañia por defecto para buscar empleo y
@@ -16,32 +16,122 @@
           ya esta disponible. La red de emprendimiento que consolida un
           portafolio de 48 empresas y 94 emprendedores en el país.
         </h5>
-        <h4 class="text-white">
-          Coloque Sus Datos Para Enviarle Emails Referentes A FTT
-        </h4>
+        <h2 class="text-primary" style="font-weight: bold">Contactenos</h2>
+        <q-form style="" @submit="onSubmit" @reset="onReset">
+          <q-avatar>
+            <img alt="FTT Logo" src="/img/ftt_logo.png" />
+          </q-avatar>
+          <p style="color: white">Telefono: 12345678900</p>
+          <p style="color: white">
+            Direccion: Sector 1, Calle Numero 2, Local #3
+          </p>
 
-        <div class="email">
-          <q-chip color="dark" dense size="50px">
-            <q-input
-              style="padding: 20px"
-              bg-color="white"
-              rounded
-              outlined
-              label="Nombre Completo"
+          <q-input
+            style="padding-top: 20px"
+            bg-color="white"
+            rounded
+            filled
+            v-model="nombre"
+            label="Escriba Su Nombre Por Favor *"
+            lazy-rules
+            :rules="[
+              (val) => (val && val.length > 0) || 'Escriba Su Nombre Por Favor',
+            ]"
+          />
+
+          <q-input
+            bg-color="white"
+            rounded
+            filled
+            v-model="apellido"
+            label="Escriba Su Apellido Por Favor *"
+            lazy-rules
+            :rules="[
+              (val) =>
+                (val && val.length > 0) || 'Escriba Su Apellido Por Favor',
+            ]"
+          />
+
+          <q-input
+            bg-color="white"
+            rounded
+            filled
+            v-model="email"
+            label="Escriba Su Email Por Favor *"
+            lazy-rules
+            :rules="[
+              (val) => (val && val.length > 0) || 'Escriba Su Email Por Favor',
+            ]"
+          />
+
+          <q-toggle
+            v-model="aceptar"
+            label="Acepto Los Terminos Y Condiciones"
+          />
+
+          <div style="padding-bottom: 10px">
+            <q-btn label="Enviar" type="submit" color="primary" />
+            <q-btn
+              label="Reiniciar"
+              type="reset"
+              color="primary"
+              flat
+              class="q-ml-sm"
             />
-
-            <q-input bg-color="white" rounded outlined label="Email" />
-
-            <q-btn class="buttons bg-primary" size="px">
-              <i class="fas fa-sign-in-alt" style="padding-right: 10px"></i>
-              Enviar
-            </q-btn>
-          </q-chip>
-        </div>
+          </div>
+        </q-form>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { useQuasar } from "quasar";
+import { ref } from "vue";
+
+export default {
+  setup() {
+    const $q = useQuasar();
+
+    const nombre = ref(null);
+    const apellido = ref(null);
+    const email = ref(null);
+    const aceptar = ref(false);
+
+    return {
+      nombre,
+      apellido,
+      email,
+      aceptar,
+
+      onSubmit() {
+        if (aceptar.value !== true) {
+          $q.notify({
+            color: "red-5",
+            textColor: "white",
+            icon: "warning",
+            message: "You need to accept the license and terms first",
+          });
+        } else {
+          $q.notify({
+            color: "green-4",
+            textColor: "white",
+            icon: "cloud_done",
+            message: "Submitted",
+          });
+        }
+      },
+
+      onReset() {
+        nombre.value = null;
+        apellido.value = null;
+        email.value = null;
+        aceptar.value = false;
+      },
+    };
+  },
+};
+</script>
 
 <style scoped>
 h2,
@@ -62,6 +152,13 @@ h5 {
   justify-self: normal;
   color: rgb(228, 228, 228);
 }
+p {
+  margin: 0px;
+  padding: 0px;
+  align-self: normal;
+  justify-self: normal;
+  color: rgb(228, 228, 228);
+}
 .main {
   height: 100%;
   max-width: 80%;
@@ -70,17 +167,15 @@ h5 {
   margin: auto;
   align-self: center;
   justify-self: center;
-  display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 90%;
+  opacity: 100%;
 }
 
-.box {
+.form {
   display: inline-block;
-  margin: 20px;
-  padding: 20px;
-  vertical-align: top;
+  max-width: 1000px;
+  margin: auto;
   border: 1px solid #94f899;
 }
 
@@ -90,7 +185,7 @@ h5 {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 96.5vh;
+  height: 140vh;
 }
 
 .buttons {

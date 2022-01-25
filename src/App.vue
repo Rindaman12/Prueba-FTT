@@ -11,6 +11,7 @@
         <q-route-tab to="/" label="Inicio" />
         <q-route-tab to="/sobre" label="Sobre Nosotros" />
         <q-route-tab to="/servicios" label="Servicios" />
+        <q-route-tab to="/eventos" label="Eventos Y Blogs" />
       </q-tabs>
     </q-header>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <div class="form bg-dark">
+    <q-card class="form bg-dark">
       <h3 class="text-primary" style="font-weight: bold">Sobre Nosotros</h3>
       <h5>
         FAST TRACK TALENT, la compañia por defecto para buscar empleo y
@@ -75,7 +75,7 @@
           />
         </div>
       </q-form>
-    </div>
+        </q-card>
     <particles-bg
       type="random"
       :canvas="{ backgroundColor: '#000000' }"

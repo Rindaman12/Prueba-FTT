@@ -10,12 +10,18 @@
       <q-tabs align="left">
         <q-route-tab to="/" label="Inicio" />
         <q-route-tab to="/sobre" label="Sobre Nosotros" />
-        <q-route-tab to="/contacto" label="Contactenos" />
+        <q-route-tab to="/servicios" label="Servicios" />
       </q-tabs>
     </q-header>
 
     <q-page-container>
-      <router-view />
+      <keep-alive>
+        <router-view v-slot="{ Component }">
+          <transition name="slide">
+            <component :is="Component" />
+          </transition>
+        </router-view>
+      </keep-alive>
     </q-page-container>
     <!-- Y terminalo aqui -->
   </q-layout>

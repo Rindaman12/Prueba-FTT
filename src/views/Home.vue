@@ -1,35 +1,48 @@
 <template>
-  <div class="bg-image">
-    <div class="main">
-      <div class="headers">
-        <h2 class="text-primary" style="font-weight: bold">FAST TRACK TALENT</h2>
-        <h3 class="text-white">Llevandote Mas Cerca Al Talento De Verdad</h3>
-        <h5>
-          FAST TRACK TALENT, la compañia por defecto para buscar empleo y
-          contratar talento de trabajo remoto a nivel nacional e internacional,
-          ya esta disponible. La red de emprendimiento que consolida un
-          portafolio de 48 empresas y 94 emprendedores en el país.
-        </h5>
+  <div class="main">
+    <div class="headers bg-dark">
+      <h2 class="text-primary" style="font-weight: bold">FAST TRACK TALENT</h2>
+      <h3 class="text-white">Llevandote Mas Cerca Al Talento De Verdad</h3>
+      <h5>
+        FAST TRACK TALENT, la compañia por defecto para buscar empleo y
+        contratar talento de trabajo remoto a nivel nacional e internacional, ya
+        esta disponible. La red de emprendimiento que consolida un portafolio de
+        48 empresas y 94 emprendedores en el país.
+      </h5>
 
-        <div>
-          <q-btn class="buttons" color="primary" size="24px">
-            <router-link to="/about">
-              <i class="far fa-address-card" style="padding-right: 10px"></i>
-              Sobre Nosotros
-            </router-link>
-          </q-btn>
+      <div>
+        <q-btn class="buttons" color="primary" size="24px">
+          <router-link to="/sobre">
+            <i class="far fa-address-card" style="padding-right: 10px"></i>
+            Sobre Nosotros
+          </router-link>
+        </q-btn>
 
-          <q-btn class="buttons" color="secondary" size="24px">
-            <router-link to="/Contact">
-              <i class="far fa-envelope" style="padding-right: 10px"></i>
-              Contactenos
-            </router-link>
-          </q-btn>
-        </div>
+        <q-btn class="buttons" color="secondary" size="24px">
+          <router-link to="/servicios">
+            <i class="fas fa-broadcast-tower" style="padding-right: 10px"></i>
+            Servicios
+          </router-link>
+        </q-btn>
       </div>
     </div>
   </div>
+       <particles-bg
+      type="random"
+      :canvas="{ backgroundColor: '#000000' }"
+      :bg="true"
+    />
 </template>
+
+<script>
+import { ParticlesBg } from "particles-bg-vue";
+
+export default {
+  components: {
+    ParticlesBg,
+  },
+};
+</script>
 
 <style scoped>
 h2,
@@ -44,6 +57,8 @@ h5 {
   justify-self: normal;
   color: rgb(228, 228, 228);
 }
+
+
 .main {
   height: 100%;
   max-width: 80%;
@@ -55,7 +70,6 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  opacity: 90%;
 }
 
 .headers {
@@ -64,15 +78,7 @@ h5 {
   padding: 20px;
   vertical-align: top;
   border: 1px solid #94f899;
-}
-
-.bg-image {
-  background-image: url("/img/bg-home.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 97vh;
+  opacity: 80%;
 }
 
 .buttons {

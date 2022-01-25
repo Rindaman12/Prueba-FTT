@@ -1,95 +1,98 @@
 <template>
-  <div class="bg-image">
-    <div class="main">
-      <div class="form">
-        <h3 class="text-primary" style="font-weight: bold">Sobre Nosotros</h3>
-        <h5>
-          FAST TRACK TALENT, la compañia por defecto para buscar empleo y
-          contratar talento de trabajo remoto a nivel nacional e internacional,
-          ya esta disponible. La red de emprendimiento que consolida un
-          portafolio de 48 empresas y 94 emprendedores en el país.
-        </h5>
+  <div class="main">
+    <div class="form bg-dark">
+      <h3 class="text-primary" style="font-weight: bold">Sobre Nosotros</h3>
+      <h5>
+        FAST TRACK TALENT, la compañia por defecto para buscar empleo y
+        contratar talento de trabajo remoto a nivel nacional e internacional, ya
+        esta disponible. La red de emprendimiento que consolida un portafolio de
+        48 empresas y 94 emprendedores en el país.
+      </h5>
 
-        <h5>
-          FAST TRACK TALENT, la compañia por defecto para buscar empleo y
-          contratar talento de trabajo remoto a nivel nacional e internacional,
-          ya esta disponible. La red de emprendimiento que consolida un
-          portafolio de 48 empresas y 94 emprendedores en el país.
-        </h5>
-        <h2 class="text-primary" style="font-weight: bold">Contactenos</h2>
-        <q-form style="" @submit="onSubmit" @reset="onReset">
-          <q-avatar>
-            <img alt="FTT Logo" src="/img/ftt_logo.png" />
-          </q-avatar>
-          <p style="color: white">Telefono: 12345678900</p>
-          <p style="color: white">
-            Direccion: Sector 1, Calle Numero 2, Local #3
-          </p>
+      <h5>
+        FAST TRACK TALENT, la compañia por defecto para buscar empleo y
+        contratar talento de trabajo remoto a nivel nacional e internacional, ya
+        esta disponible. La red de emprendimiento que consolida un portafolio de
+        48 empresas y 94 emprendedores en el país.
+      </h5>
+      <h2 class="text-primary" style="font-weight: bold">Contactenos</h2>
+      <q-form style="" @submit="onSubmit" @reset="onReset">
+        <q-avatar>
+          <img alt="FTT Logo" src="/img/ftt_logo.png" />
+        </q-avatar>
+        <p style="color: white">Telefono: 12345678900</p>
+        <p style="color: white">
+          Direccion: Sector 1, Calle Numero 2, Local #3
+        </p>
 
-          <q-input
-            style="padding-top: 20px"
-            bg-color="white"
-            rounded
-            filled
-            v-model="nombre"
-            label="Escriba Su Nombre Por Favor *"
-            lazy-rules
-            :rules="[
-              (val) => (val && val.length > 0) || 'Escriba Su Nombre Por Favor',
-            ]"
+        <q-input
+          style="padding-top: 20px"
+          bg-color="white"
+          rounded
+          filled
+          v-model="nombre"
+          label="Escriba Su Nombre Por Favor *"
+          lazy-rules
+          :rules="[
+            (val) => (val && val.length > 0) || 'Escriba Su Nombre Por Favor',
+          ]"
+        />
+
+        <q-input
+          bg-color="white"
+          rounded
+          filled
+          v-model="apellido"
+          label="Escriba Su Apellido Por Favor *"
+          lazy-rules
+          :rules="[
+            (val) => (val && val.length > 0) || 'Escriba Su Apellido Por Favor',
+          ]"
+        />
+
+        <q-input
+          bg-color="white"
+          rounded
+          filled
+          v-model="email"
+          label="Escriba Su Email Por Favor *"
+          lazy-rules
+          :rules="[
+            (val) => (val && val.length > 0) || 'Escriba Su Email Por Favor',
+          ]"
+        />
+
+        <q-toggle v-model="aceptar" label="Acepto Los Terminos Y Condiciones" />
+
+        <div style="padding-bottom: 10px">
+          <q-btn label="Enviar" type="submit" color="primary" />
+          <q-btn
+            label="Reiniciar"
+            type="reset"
+            color="primary"
+            flat
+            class="q-ml-sm"
           />
-
-          <q-input
-            bg-color="white"
-            rounded
-            filled
-            v-model="apellido"
-            label="Escriba Su Apellido Por Favor *"
-            lazy-rules
-            :rules="[
-              (val) =>
-                (val && val.length > 0) || 'Escriba Su Apellido Por Favor',
-            ]"
-          />
-
-          <q-input
-            bg-color="white"
-            rounded
-            filled
-            v-model="email"
-            label="Escriba Su Email Por Favor *"
-            lazy-rules
-            :rules="[
-              (val) => (val && val.length > 0) || 'Escriba Su Email Por Favor',
-            ]"
-          />
-
-          <q-toggle
-            v-model="aceptar"
-            label="Acepto Los Terminos Y Condiciones"
-          />
-
-          <div style="padding-bottom: 10px">
-            <q-btn label="Enviar" type="submit" color="primary" />
-            <q-btn
-              label="Reiniciar"
-              type="reset"
-              color="primary"
-              flat
-              class="q-ml-sm"
-            />
-          </div>
-        </q-form>
-      </div>
+        </div>
+      </q-form>
     </div>
+    <particles-bg
+      type="random"
+      :canvas="{ backgroundColor: '#000000' }"
+      :bg="true"
+    />
   </div>
 </template>
 
 <script>
 import { useQuasar } from "quasar";
 import { ref } from "vue";
+import { ParticlesBg } from "particles-bg-vue";
 
 export default {
+  components: {
+    ParticlesBg,
+  },
   setup() {
     const $q = useQuasar();
 
@@ -169,7 +172,6 @@ p {
   justify-self: center;
   flex-direction: column;
   align-items: center;
-  opacity: 100%;
 }
 
 .form {
@@ -177,15 +179,7 @@ p {
   max-width: 1000px;
   margin: auto;
   border: 1px solid #94f899;
-}
-
-.bg-image {
-  background-image: url("/img/bg-about.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 140vh;
+  opacity: 92%;
 }
 
 .buttons {

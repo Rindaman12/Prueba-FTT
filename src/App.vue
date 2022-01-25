@@ -5,13 +5,24 @@
         <img alt="FTT Logo" src="/img/ftt_logo.png" />
       </q-avatar>
       Fast Track Talent
-      <!-- hacer vuemobile detect aqui -->
 
       <q-tabs align="left">
         <q-route-tab to="/" label="Inicio" />
         <q-route-tab to="/sobre" label="Sobre Nosotros" />
         <q-route-tab to="/servicios" label="Servicios" />
         <q-route-tab to="/eventos" label="Eventos Y Blogs" />
+
+        <i
+          class="fab fa-instagram-square fa-3x"
+          color="green"
+          style="padding-right: 5px"
+        ></i>
+
+        <i
+          class="fab fa-facebook-square fa-3x"
+          color="white"
+          style="padding-left: 5px"
+        ></i>
       </q-tabs>
     </q-header>
 
@@ -24,7 +35,6 @@
         </router-view>
       </keep-alive>
     </q-page-container>
-    <!-- Y terminalo aqui -->
   </q-layout>
 </template>
 

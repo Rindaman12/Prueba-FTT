@@ -1,11 +1,12 @@
 import { createApp } from "vue";
-import App from "./App.vue";
+import AppChoose from "./AppChoose.vue";
 import "./registerServiceWorker";
 import router from "./router";
 import { Quasar } from "quasar";
 import quasarUserOptions from "./quasar-user-options";
+import VueMobileDetection from 'vue-mobile-detection'
 
-createApp(App)
+createApp(AppChoose)
   .use(
     Quasar,
     {
@@ -25,4 +26,5 @@ createApp(App)
     quasarUserOptions
   )
   .use(router)
+  .use(VueMobileDetection)
   .mount("#app");

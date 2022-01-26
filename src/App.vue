@@ -27,13 +27,11 @@
     </q-header>
 
     <q-page-container>
-      <keep-alive>
-        <router-view v-slot="{ Component }">
-          <transition name="slide">
+      <router-view v-slot="{ Component }">
+        <keep-alive>
             <component :is="Component" />
-          </transition>
-        </router-view>
-      </keep-alive>
+        </keep-alive>
+      </router-view>
     </q-page-container>
   </q-layout>
 </template>

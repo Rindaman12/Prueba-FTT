@@ -1,24 +1,26 @@
-# ftt
+# FTT Prueba Programador Luis Peña
 
-## Project setup
+## Setup de las dependencias y el proyecto
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compila y recarga al momento
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compila y minifica el contenido
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Acomoda los lints
 ```
 npm run lint
 ```
 
-### Customize configuration
+### Si se entra desde las vista de dispositivos mobiles, la app cambiara por completo
+
+### Customizar configuracion
 See [Configuration Reference](https://cli.vuejs.org/config/).

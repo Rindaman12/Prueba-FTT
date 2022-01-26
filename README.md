@@ -19,7 +19,10 @@ npm run build
 ```
 npm run lint
 ```
-
+### Como hacerlo funcionar
+```
+Pueden hacerlo desde cualquiera servicio de su proferencia, usando xampp con localhost, Vue cli usando Vue ui y demas
+```
 ### Si se entra desde las vista de dispositivos mobiles, la app cambiara por completo
 
 ### Customizar configuracion
